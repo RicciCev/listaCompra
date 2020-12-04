@@ -3,18 +3,19 @@
         <!-- guardamos el formulario en una variable para poder usarla luego. -->
         <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
             <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
+                <label>Username</label>
+                <!-- guardamos el input del usuario en la variable username que con el ngModel también guardará en el LoginForm a través de su instancia llamada loginModel y declarada en el componente ts. -->
                 <input type="text" class="form-control" name="username" #username [(ngModel)]="loginModel.username">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" #password [(ngModel)]="loginModel.password">
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <input type="checkbox" class="form-check-input" name="rememberMe" #rememberMe [(ngModel)]="loginModel.rememberMe">
+                <label class="form-check-label">Check me out</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
 </div>
