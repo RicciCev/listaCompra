@@ -19,6 +19,10 @@ export class LoginService {
         this.isLogin$ = new Subject<boolean>();
     }
 
+    public getIsLogin(): boolean {
+        return this.isLogin;
+    }
+
     public getIsLoginSub(): Observable<any> {
         return this.isLogin$.asObservable();
     }
@@ -57,5 +61,14 @@ export class LoginService {
                 console.log(error);
             }
         );
+    }
+
+    // método para desloguear al usuario.
+    public logOut(): void {
+        this.isLogin = false;
+        // se borra el token.
+        this.token = '';
+        // notificamos al componente que el estado de isLogin ha cambiado.
+        this.isLogin$.next(this.isLogin);
     }
 }
