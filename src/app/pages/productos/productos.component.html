@@ -1,1 +1,21 @@
-<p>productos works!</p>
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Otros</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let producto of this.productos">
+                    <th scope="row">{{producto.id}}</th>
+                    <td>{{producto.nombre}}</td>
+                    <td>{{producto.cantidad}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductosService } from './services/productos.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   /* importamos el LoginService en el módulo padre del proyecto porque
   necesitaremos su token desde otros modulos y componentes que no sean el login. */
-  providers: [LoginService],
+  providers: [LoginService, ProductosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
