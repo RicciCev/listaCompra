@@ -58,4 +58,10 @@ export class ProductosComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
     this.subLogin.unsubscribe();
   }
+
+  public deleteProduct(id: number): void {
+    console.log('Click' + id);
+
+    this.productosService.deleteProduct(id);
+  }
 }

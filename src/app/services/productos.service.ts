@@ -52,4 +52,26 @@ export class ProductosService {
             }
         );
     }
+
+    public deleteProduct(id: number): void {
+        const httpOptions = {
+            headers: new HttpHeaders(
+                {
+                    'Authorization': 'Bearer ' + this.loginService.getToken()
+                }
+            )
+        };
+
+        this.httpClient.delete('http://localhost:8080/api/productos/' + id, httpOptions).subscribe(
+            (response: any) => {
+                console.log(response);
+                // getProductos se encargará de todo, es decir de actualizar la lista.
+                this.getProductos();
+            },
+            error => {
+                console.log(error);
+                // this.loginService.logOut();
+            }
+        );
+    }
 }
